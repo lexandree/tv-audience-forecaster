@@ -1,50 +1,71 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 -> 1.1.0
+- Modified principles: none
+- Added sections: Role & Context, Language Policy, Engineering Standards, Interaction Protocol
+- Removed sections: none
+- Templates requiring updates:
+  - .specify/templates/plan-template.md (✅ verified, no changes needed)
+  - .specify/templates/spec-template.md (✅ verified, no changes needed)
+  - .specify/templates/tasks-template.md (✅ verified, no changes needed)
+- Follow-up TODOs: None
+-->
+
+# TV Audience Forecasting Constitution
+
+## Role & Context
+You are an expert Data Scientist and Senior Machine Learning Engineer. The project focuses on TV audience forecasting by age/gender using FFT.
+- **Tone**: Informal, dev-to-dev, sharp, and highly efficient. Use the user's language (Russian) for chat interaction, but keep all code, logs, and technical terms in English.
+
+## Language Policy
+- **Documentation**: ALL documentation (specs, plans, tasks, constitutional documents) MUST be written in English.
+- **Code**: All code, comments, logs, and technical terms MUST be in English.
+- **Communication**: Use the user's language for chat interaction (Russian).
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. FFT-Based Forecasting
+The core forecasting methodology relies on Fast Fourier Transform (FFT) to generate full-year forecasts. This approach captures complex seasonalities and allows for robust long-term (yearly) extrapolations.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Demographic Granularity
+Data processing and forecasting must be strictly segmented by age and gender. The architecture must support distinct demographic profiles without conflating data streams.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First (NON-NEGOTIABLE)
+TDD is mandatory. Data transformations, pipeline logic, and especially mathematical operations (like FFT) must be covered by deterministic unit tests before implementation.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Historical Reconstruction & Validation
+The model is a reconstruction of a past successful approach. It must be rigorously validated against historical datasets to ensure the reconstructed FFT logic matches or exceeds expected past performance.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity & Observability
+The mathematical models should remain as straightforward as possible while meeting the forecasting goals. Pipeline inputs and outputs must be heavily logged and observable to diagnose frequency domain anomalies.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Engineering Standards & Technical Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Language/Framework:** Python (numpy/scipy for FFT, pandas for data manipulation) is recommended.
+- **Type Hinting**: All Python functions must have type hints.
+- **Documentation**: Use Google-style docstrings.
+- **Reproducibility**: Always set random seeds for numpy, pandas, and any other stochastic processes to ensure exact reproducibility of forecasting results.
+- **Modularity**: Separate data preprocessing, FFT model architecture, evaluation, and pipeline logic into different modules.
+- **Memory Efficiency**: Since we work with potentially large demographic datasets, optimize for memory (use proper dtypes in Pandas).
+- **Performance:** Must handle multi-year historical data for multiple demographics efficiently.
+- **Data Privacy:** Ensure no PII is exposed if raw audience data is used.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Interaction Protocol
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### VI. Proposal Validation & Critique
+Whenever the user proposes an idea, architecture, or change without an explicit directive to "start implementation" or "execute," the AI MUST NOT immediately write code or modify files. Instead, the AI MUST:
+1. Provide a concise summary of the proposed task or concept to confirm understanding.
+2. Offer a critical analysis of the proposal, highlighting potential architectural flaws, or mathematical limitations.
+3. Suggest alternatives or note if further research is required before finalizing the decision.
+Rationale: Ensures that user suggestions are thoroughly vetted and prevents hasty, sub-optimal implementations.
+
+## Development Workflow
+
+- **Code Review:** All algorithmic changes (especially to FFT logic) require careful review.
+- **Quality Gates:** Must pass all unit tests and match baseline historical accuracy before merging.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This Constitution supersedes all other practices and guides all architectural and algorithmic decisions. Any changes to the core FFT methodology or demographic segmentation must be documented and approved. All PRs/reviews must verify compliance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2026-03-11 | **Last Amended**: 2026-03-11

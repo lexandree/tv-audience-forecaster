@@ -32,6 +32,11 @@
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
 [Gates determined based on constitution file]
+- [ ] **FFT-Based Forecasting**: Does the approach utilize FFT for yearly predictions?
+- [ ] **Demographic Granularity**: Is the data strictly segmented by age and gender?
+- [ ] **Test-First**: Are deterministic unit tests planned for the mathematical operations?
+- [ ] **Historical Reconstruction**: Is there a validation step against historical baseline data?
+- [ ] **Simplicity & Observability**: Is the FFT pipeline observable and as simple as possible?
 
 ## Project Structure
 
