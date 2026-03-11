@@ -2,7 +2,7 @@
 
 A time-series forecasting CLI tool designed to predict hourly TV ratings (TVR) segmented by age and gender. Currently, the core engine uses Fast Fourier Transform (FFT) for extracting macroscopic seasonality, overlaid with external event impact modeling (holidays, sports). 
 
-*Note: This project is an active research repository. The FFT approach is currently being benchmarked against Meta's Prophet and ConvLSTM models to determine the optimal production strategy.*
+*Note: This project is an active research repository. The FFT approach, Meta's Prophet, and a ConvLSTM model have been implemented and benchmarked on synthetic data. **It is crucial to note that these synthetic datasets, while useful for initial validation, do not possess the nuanced complexities of real-world TV viewership data. Advanced model tuning, especially for deep learning approaches like ConvLSTM, will yield significantly more accurate and representative results when applied to natural, diverse datasets.***
 
 ## Quickstart
 
