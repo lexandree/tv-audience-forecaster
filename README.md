@@ -36,6 +36,8 @@ tv-forecast \
 
 ## Roadmap & Benchmarking
 - [x] Phase 1-6: Implement end-to-end FFT baseline pipeline.
-- [ ] Implement Meta `Prophet` forecasting engine.
-- [ ] Implement `ConvLSTM` deep learning engine.
-- [ ] Compare models on computational efficiency, MAPE, and ease of integrating external regressors (Weather/Holidays).
+- [x] Implement Meta `Prophet` forecasting engine.
+- [x] Implement `ConvLSTM` deep learning engine.
+- [x] Compare models on computational efficiency, MAPE, and ease of integrating external regressors (Weather/Holidays).
+
+*Current results show that **Prophet** provides the best accuracy for complex TVR patterns, while **FFT** is the most efficient for large-scale, low-latency processing.*
