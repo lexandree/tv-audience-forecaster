@@ -5,7 +5,7 @@ pubDate: 2026-03-18
 tags: ["Time-Series", "Prophet", "FFT", "ConvLSTM", "Data Science", "Python"]
 githubUrl: "https://github.com/lexandree/tv-audience-forecaster"
 featured: true
-order: 10
+order: 9
 ---
 
 ## Project Overview
