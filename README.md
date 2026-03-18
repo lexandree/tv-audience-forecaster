@@ -18,15 +18,44 @@ python scripts/generate_synthetic_agf.py --start 2023-01-01 --end 2026-01-01 --o
 ```
 
 ### 3. Run the Forecaster
-Generate a 365-day forecast starting from a specific date:
+Generate a 365-day forecast starting from a specific date. You can choose the forecasting engine using the `--engine` flag (default is `fft`).
+
+**Using FFT (Baseline):**
 ```bash
 tv-forecast \
   --input data/raw/synthetic_history.csv \
   --events data/raw/events_calendar.csv \
-  --output data/output/forecast_2026.csv \
+  --output data/output/forecast_fft_2026.csv \
   --start-date 2026-01-01 \
-  --days 365
+  --days 365 \
+  --engine fft \
+  --k-freq 100
 ```
+
+**Using Meta Prophet:**
+Prophet natively handles the multiple seasonalities and takes slightly longer to train.
+```bash
+tv-forecast \
+  --input data/raw/synthetic_history.csv \
+  --events data/raw/events_calendar.csv \
+  --output data/output/forecast_prophet_2026.csv \
+  --start-date 2026-01-01 \
+  --days 365 \
+  --engine prophet
+```
+
+**Using ConvLSTM:**
+The PyTorch ConvLSTM engine trains a sequence model with a 1-week lookback window. *Note: Running this on CPUs for long sequences is computationally intensive.*
+```bash
+tv-forecast \
+  --input data/raw/synthetic_history.csv \
+  --events data/raw/events_calendar.csv \
+  --output data/output/forecast_convlstm_2026.csv \
+  --start-date 2026-01-01 \
+  --days 365 \
+  --engine convlstm
+```
+
 
 ## How It Works (FFT Baseline)
 1. **Ingestion & Segmentation**: Data is strictly segmented by `age_group` and `gender`. Missing values are interpolated using a robust season-over-season fill.
