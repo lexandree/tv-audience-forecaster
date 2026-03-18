@@ -41,3 +41,9 @@ tv-forecast \
 - [x] Compare models on computational efficiency, MAPE, and ease of integrating external regressors (Weather/Holidays).
 
 *Current results show that **Prophet** provides the best accuracy for complex TVR patterns, while **FFT** is the most efficient for large-scale, low-latency processing.*
+
+## TO DO / Future Work
+- [ ] **Real-world Panel Data:** Source high-resolution panel datasets (e.g., from BARC India or open European providers) to expose models to authentic noise and variance, crucial for ConvLSTM optimization.
+- [ ] **Advanced Meteorological Regressors:** Extend weather data via the Open-Meteo API (e.g., sunshine duration, wind speed) to measure nuanced impacts on viewing behavior.
+- [ ] **Commercial Demographics:** Expand the target variable segmentations to focus on traditional commercial demographics like 14-49.
+- [ ] **Hyperparameter Tuning:** Conduct a comprehensive grid search and implement automated learning rate scheduling for the PyTorch ConvLSTM.
